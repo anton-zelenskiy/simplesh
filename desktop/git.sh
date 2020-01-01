@@ -1,9 +1,8 @@
 #!/bin/bash
-#
-# Developed by Nikhil Krishna Nair
-# Contact nikhilkrishna@gmail.com
-#
+
 
 git.sh(){
-    sudo apt install -y git
+    sudo apt install -y git;
+    git config --global user.email "antonfewwt@gmail.com";
+    git config --global user.name "Anton Zelenskiy";
 }

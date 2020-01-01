@@ -8,12 +8,6 @@
 # Import base
 . base/import.sh
 
-# Import Sytem
-. system/import.sh
-
-# Import Server Side
-. server/import.sh
-
 # Import Desktop
 . desktop/import.sh
 
@@ -26,35 +20,11 @@ ${txtblu}
 ===================================
 
         AutoInstall SH
-Created by Rafael Corrêa Gomes
 
 ===================================
 
 ${txtrst}Options:
-
-${Red}########## System${txtrst}
- "
-for file in $(ls ./system)
-do
-    if [ $file != import.sh ]
-    then
-        echo $file
-    fi
-
-done;
-echo -e "
-
-${Yellow}########## Server Side
-${txtrst} "
-
-for file in $(ls ./server)
-do
-    if [ $file != import.sh ]
-    then
-        echo $file
-    fi
-
-done;
+"
 echo -e "
 
 ${Purple}########## Desktop
@@ -68,7 +38,6 @@ do
 
 done;
 echo -e "
-
 
 e - Exit
 
