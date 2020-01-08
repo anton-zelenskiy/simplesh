@@ -19,13 +19,16 @@
 # Import Oh-My-ZSH
 . desktop/ohmyzsh.sh
 
+# Import auxiliary.sh
+. desktop/auxiliary.sh
+
 
 
 # Import Chrome
 . desktop/chrome.sh
 
-# Import PyCharm Professional
-. desktop/pycharm.sh
+# Import Telegram
+. desktop/telegram.sh
 
 
 
@@ -43,6 +46,9 @@
 
 # Import Yarn
 . desktop/yarn.sh
+
+# Import PyCharm Professional
+. desktop/pycharm.sh
 
 
 

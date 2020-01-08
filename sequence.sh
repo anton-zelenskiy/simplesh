@@ -1,8 +1,4 @@
 #!/bin/bash
-#
-# Developed by Nikhil Krishna Nair
-# Contact nikhilkrishna@gmail.com
-#
 
 #==================================== Imports ===============================================
 # Import base
@@ -18,8 +14,11 @@ clear
 
 echo -e "
 Enter an option:
-server_seq - Execute server dev install sequence
-desktop_seq - Execute deskop dev install sequence 
+1 - update.sh; upgrade.sh; auxiliary.sh; gnometweaks.sh;
+2 - curl.sh; git.sh; ohmyzsh.sh;
+3 - chrome.sh; telegram.sh;
+4 - python.sh; docker.sh; dockercompose.sh; nodejs.sh; yarn.sh; pycharm.sh;
+
 e - Exit
 ===============================
 "
@@ -29,8 +28,10 @@ case $program in
 
     # Performs the function with the name of the variable passed
     e) clear; exit;;
-    server_seq) upgrade.sh; ready;;
-    desktop_seq) upgrade.sh; curl.sh; git.sh; node.sh; docker.sh; vscode.sh; ready;;
+    1) update.sh; upgrade.sh; auxiliary.sh; gnometweaks.sh; ready;;
+    2) curl.sh; git.sh; ohmyzsh.sh; ready;;
+    3) chrome.sh; telegram.sh; ready;;
+    4) python.sh; docker.sh; dockercompose.sh; nodejs.sh; yarn.sh; pycharm.sh; ready;;
     *) welcome;;
 
 esac

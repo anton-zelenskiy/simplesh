@@ -1,5 +1,7 @@
 #!/bin/bash
 
 gnometweaks.sh() {
-	clear; sudo apt install gnome-tweaks;
+  # Fix touchpad button; switch keyboard layout
+	clear;
+	sudo apt install gnome-tweaks;
 }
