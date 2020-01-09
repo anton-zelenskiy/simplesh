@@ -6,4 +6,8 @@ auxiliary.sh(){
 	sudo add-apt-repository ppa:gnome-shell-extensions/ppa;
   sudo apt update;
   sudo apt install gnome-shell-extensions;
+
+  # Fix Wifi
+  sudo modprobe -r ideapad_laptop;
+  sudo rfkill unblock all;
 }
