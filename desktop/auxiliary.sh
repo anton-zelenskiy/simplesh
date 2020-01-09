@@ -10,4 +10,7 @@ auxiliary.sh(){
   # Fix Wifi
   sudo modprobe -r ideapad_laptop;
   sudo rfkill unblock all;
+
+  # Install openvpn
+  sudo apt install openvpn;
 }

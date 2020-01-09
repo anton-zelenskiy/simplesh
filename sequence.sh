@@ -29,8 +29,8 @@ case $program in
     # Performs the function with the name of the variable passed
     e) clear; exit;;
     1) update.sh; upgrade.sh; auxiliary.sh; gnometweaks.sh; ready;;
-    2) curl.sh; git.sh; ohmyzsh.sh; ready;;
-    3) chrome.sh; telegram.sh; ready;;
+    2) curl.sh; git.sh; ohmyzsh.sh; chrome.sh; sshkey.sh; ready;;
+    3) telegram.sh; ready;;
     4) python.sh; docker.sh; dockercompose.sh; nodejs.sh; yarn.sh; pycharm.sh; ready;;
     *) welcome;;
 

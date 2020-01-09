@@ -22,6 +22,9 @@
 # Import auxiliary.sh
 . desktop/auxiliary.sh
 
+# Import sshkey.sh
+. desktop/sshkey.sh
+
 
 
 # Import Chrome

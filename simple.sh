@@ -1,8 +1,5 @@
 #!/bin/bash
-#
-# Developed by Rafael Corrêa Gomes
-# Contact rafaelcgstz@gmail.com
-#
+
 
 #==================================== Imports ===============================================
 # Import base
@@ -11,50 +8,48 @@
 # Import Desktop
 . desktop/import.sh
 
-# Presentation function and options
 welcome(){
+  clear
+  echo -e "
+  ${txtblu}
+  ===================================
 
-clear
-echo -e "
-${txtblu}
-===================================
+          AutoInstall SH
 
-        AutoInstall SH
+  ===================================
 
-===================================
+  ${txtrst}Options:
+  "
+  echo -e "
 
-${txtrst}Options:
-"
-echo -e "
+  ${Purple}########## Desktop
+  ${txtrst} "
+  for file in $(ls ./desktop)
+  do
+      if [ $file != import.sh ] && [ $file != files ]
+      then
+          echo $file
+      fi
 
-${Purple}########## Desktop
-${txtrst} "
-for file in $(ls ./desktop)
-do
-    if [ $file != import.sh ] && [ $file != files ]
-    then
-        echo $file
-    fi
+  done;
+  echo -e "
 
-done;
-echo -e "
+  e - Exit
 
-e - Exit
+  ==================================
 
-==================================
+  Enter an option:
+  "
+  read program
 
-Enter an option:
-"
-    read program
+  case $program in
 
-case $program in
+      # Performs the function with the name of the variable passed
+      e) clear; exit;;
+      $program) $program; ready;;
+      *) welcome;;
 
-    # Performs the function with the name of the variable passed
-    e) clear; exit;;
-    $program) $program; ready;;
-    *) welcome;;
-
-esac
+  esac
 }
 
 welcome
