@@ -3,10 +3,10 @@
 
 #==================================== Imports ===============================================
 # Import base
-. base/import.sh
+. base/_import.sh
 
 # Import Desktop
-. desktop/import.sh
+. desktop/_import.sh
 
 welcome(){
   clear

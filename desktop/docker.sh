@@ -2,14 +2,21 @@
 
 
 docker.sh(){
-	sudo apt remove docker docker-engine docker.io containerd runc;
-	sudo apt update;
-	sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common;
-	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -;
-	sudo apt-key fingerprint 0EBFCD88;
-	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable";
-	sudo apt update;
-	sudo apt install docker-ce docker-ce-cli containerd.io;
+	sudo install -m 0755 -d /etc/apt/keyrings;
+	sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc;
+	sudo chmod a+r /etc/apt/keyrings/docker.asc;
+
+	echo \
+	"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+	$(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
+	sudo tee /etc/apt/sources.list.d/docker.list > /dev/null;
+	sudo apt-get update;
+
+	sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin;
+
 	sudo groupadd docker;
 	sudo usermod -aG docker $USER;
+
+	sudo chown "$USER":"$USER" /home/"$USER"/.docker -R;
+ 	sudo chmod g+rwx "$HOME/.docker" -R;
 }
